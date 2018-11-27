@@ -1,0 +1,24 @@
+{
+    "manifest_version": 2,
+    "name": "CNPJ Query Generator",
+    "version": "1.0",
+    "description": "Gera query para cadastramento de empresa",
+    "permissions": [
+        "activeTab",
+        "notifications",
+        "http://*/*",
+        "tabs"
+    ],
+
+    "content_scripts": [
+    {
+        "matches": ["*://consultacnpj.com/*"],
+        "js": ["js/content.js"],
+        "run_at": "document_end"
+    }],
+
+    "browser_action": {
+    "default_title": "Whereami?",
+    "default_popup": "popup.html"
+  }
+}
