@@ -1,0 +1,46 @@
+div.darkTable {
+  font-family: "Arial Black", Gadget, sans-serif;
+  border: 1px solid #E5E5E5;
+  background-color: #ABD3F7;
+  width: 100%;
+  height: 100px;
+  text-align: left;
+  border-collapse: collapse;
+}
+.divTable.darkTable .divTableCell, .divTable.darkTable .divTableHead {
+  border: 1px solid #AAAAAA;
+  padding: 2px 1px;
+}
+.divTable.darkTable .divTableBody .divTableCell {
+  font-size: 13px;
+  color: #353535;
+}
+.divTable.darkTable .divTableRow:nth-child(even) {
+  background: #9CBBFF;
+}
+.divTable.darkTable .divTableHeading {
+  background: #466493;
+  border-bottom: 1px solid #B6B6B6;
+}
+.divTable.darkTable .divTableHeading .divTableHead {
+  font-size: 15px;
+  font-weight: bold;
+  color: #E6E6E6;
+  text-align: center;
+  border-left: 1px solid #4A4A4A;
+}
+.divTable.darkTable .divTableHeading .divTableHead:first-child {
+  border-left: none;
+}
+
+.darkTable .tableFootStyle {
+  font-size: 12px;
+}
+/* DivTable.com */
+.divTable{ display: table; }
+.divTableRow { display: table-row; }
+.divTableHeading { display: table-header-group;}
+.divTableCell, .divTableHead { display: table-cell;}
+.divTableHeading { display: table-header-group;}
+.divTableFoot { display: table-footer-group;}
+.divTableBody { display: table-row-group;}

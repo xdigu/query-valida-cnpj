@@ -1,153 +1,62 @@
 <!DOCTYPE html>
 <html>
 
-<body style="height:300px; width:400px;">
-
+<head>
+    <link rel="stylesheet" href="/css/style.css" />
     <script src="script/content.js"></script>
 
-    <style type="text/css">
-        .tg {
-            border-collapse: collapse;
-            border-spacing: 0;
-            border-color: #aabcfe;
-        }
+    <!-- <style>
+            html,body{width:425px;}
+    </style> -->
+</head>
 
-        .tg td {
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            padding: 3px 5px;
-            border-style: solid;
-            border-width: 1px;
-            overflow: hidden;
-            word-break: normal;
-            border-color: #aabcfe;
-            color: #669;
-            background-color: #e8edff;
-        }
-
-        .tg th {
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            font-weight: normal;
-            padding: 3px 5px;
-            border-style: solid;
-            border-width: 1px;
-            overflow: hidden;
-            word-break: normal;
-            border-color: #aabcfe;
-            color: #039;
-            background-color: #b9c9fe;
-        }
-
-        .tg .tg-exod {
-            background-color: #D2E4FC;
-            font-size: 100%;
-            font-family: "Trebuchet MS", Helvetica, sans-serif !important;
-            ;
-            border-color: inherit;
-            text-align: left;
-            vertical-align: top
-        }
-
-        .tg .tg-ho7h {
-            font-size: 14px;
-            font-family: "Trebuchet MS", Helvetica, sans-serif !important;
-            ;
-            border-color: #010042;
-            text-align: left;
-            vertical-align: top
-        }
-
-        .tg .tg-3d8z {
-            background-color: #D2E4FC;
-            font-size: 100%;
-            border-color: inherit;
-            text-align: left;
-            vertical-align: top
-        }
-
-        .tg .tg-8dml {
-            font-size: 100%;
-            font-family: "Trebuchet MS", Helvetica, sans-serif !important;
-            ;
-            border-color: inherit;
-            text-align: left;
-            vertical-align: top
-        }
-
-        .tg .tg-sg5v {
-            font-size: 100%;
-            border-color: inherit;
-            text-align: left;
-            vertical-align: top
-        }
-
-        @media screen and (max-width: 767px) {
-            .tg {
-                width: auto !important;
-            }
-
-            .tg col {
-                width: auto !important;
-            }
-
-            .tg-wrap {
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-            }
-        }
-    </style>
-    <div class="tg-wrap">
-        <table class="tg" style="undefined; table-layout: fixed; width: 322px">
-            <colgroup>
-                <col style="width: 128px">
-                <col style="width: 194px">
-            </colgroup>
-            <tr>
-                <th class="tg-g4ty">Titulo</th>
-                <th class="tg-3esh">Descricao</th>
-            </tr>
-            <tr>
-                <td class="tg-wz43">Nome Fantasia:</td>
-                <td class="tg-hmp3" id="nome-fantasia"></td>
-            </tr>
-            <tr>
-                <td class="tg-zef7">Nome Empresa:</td>
-                <td class="tg-0lax" id="nome-empresa"></td>
-            </tr>
-            <tr>
-                <td class="tg-wz43">Cnpj Empresa:</td>
-                <td class="tg-hmp3" id="cnpj"></td>
-            </tr>
-            <tr>
-                <td class="tg-zef7">Logradouro:</td>
-                <td class="tg-0lax" id="logradouro"></td>
-            </tr>
-            <tr>
-                <td class="tg-wz43">Numero:</td>
-                <td class="tg-hmp3" id="numero"></td>
-            </tr>
-            <tr>
-                <td class="tg-zef7">Bairro:</td>
-                <td class="tg-0lax" id="bairro"></td>
-            </tr>
-            <tr>
-                <td class="tg-wz43">Cidade:</td>
-                <td class="tg-hmp3" id="cidade"></td>
-            </tr>
-            <tr>
-                <td class="tg-zef7">UF:</td>
-                <td class="tg-0lax" id="uf"></td>
-            </tr>
-            <tr>
-                <td class="tg-wz43">Cep:</td>
-                <td class="tg-hmp3" id="cep"></td>
-            </tr>
-            <tr>
-                <td class="tg-zef7">Telefone:<br></td>
-                <td class="tg-0lax" id="telefone"></td>
-            </tr>
-        </table>
+<body style="height:300px; width:300px;">
+    <div class="divTable darkTable">
+        <div class="divTableBody">
+            <div class="divTableRow">
+                <div class="divTableCell">nome empresa</div>
+                <div class="divTableCell" id="nome-empresa"></div>
+            </div>
+            <div class="divTableRow">
+                <div class="divTableCell">nome fantasia</div>
+                <div class="divTableCell" id="nome-fantasia"></div>
+            </div>
+            <div class="divTableRow">
+                <div class="divTableCell">cnpj</div>
+                <div class="divTableCell" id="cnpj"></div>
+            </div>
+            <div class="divTableRow">
+                <div class="divTableCell">logradouro</div>
+                <div class="divTableCell" id="logradouro"></div>
+            </div>
+            <div class="divTableRow">
+                <div class="divTableCell">numero</div>
+                <div class="divTableCell" id="numero"></div>
+            </div>
+            <div class="divTableRow">
+                <div class="divTableCell">bairro</div>
+                <div class="divTableCell" id="bairro"></div>
+            </div>
+            <div class="divTableRow">
+                <div class="divTableCell">cidade</div>
+                <div class="divTableCell" id="cidade"></div>
+            </div>
+            <div class="divTableRow">
+                <div class="divTableCell">uf</div>
+                <div class="divTableCell" id="uf"></div>
+            </div>
+            <div class="divTableRow">
+                <div class="divTableCell">cep</div>
+                <div class="divTableCell" id="cep"></div>
+            </div>
+            <div class="divTableRow">
+                <div class="divTableCell">telefone</div>
+                <div class="divTableCell" id="telefone"></div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button>clique aqui</button>
     </div>
 
 </body>
