@@ -1,42 +1,70 @@
+var titulo = document.getElementById('data-result').querySelectorAll('table > thead')
+var descricao = document.getElementById('data-result').querySelectorAll('table > tbody')
+var nomeEmpresa
+var nomeFantasia
+var logradouro
+var numero
+var cep
+var bairro
+var municipio
+var uf
+var telefone
+var cnpj
 
 window.setInterval(function () {
-    var titulo = document.getElementById('data-result').querySelectorAll('table > thead')
-    var descricao = document.getElementById('data-result').querySelectorAll('table > tbody')
+    titulo = document.getElementById('data-result').querySelectorAll('table > thead')
+    descricao = document.getElementById('data-result').querySelectorAll('table > tbody')
 
     for (var percorre1 = 0; percorre1 < titulo.length; percorre1++) {
         for (var percorre2 = 0; percorre2 < titulo[percorre1].querySelectorAll('thead > tr > th').length; percorre2++) {
-
             if (titulo[percorre1].querySelectorAll('thead > tr > th')[percorre2].innerHTML) {
                 switch (titulo[percorre1].querySelectorAll('thead > tr > th')[percorre2].innerHTML) {
                     case 'Nome Empresarial':
-                        console.log(descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML)
+                        var nomeEmpresa = descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML
                         break
                     case 'Nome Fantasia':
-                        console.log(descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML)
+                        var nomeFantasia = descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML
                         break
                     case 'Logradouro':
-                        console.log(descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML)
+                        var logradouro = descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML
                         break
                     case 'Número':
-                        console.log(descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML)
+                        var numero = descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML
                         break
                     case 'CEP':
-                        console.log(descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML)
+                        var cep = descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML
                         break
                     case 'Bairro':
-                        console.log(descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML)
+                        var bairro = descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML
                         break
                     case 'Município':
-                        console.log(descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML)
+                        var municipio = descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML
                         break
                     case 'UF':
-                        console.log(descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML)
+                        var uf = descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML
                         break
                     case 'Telefone':
-                        console.log(descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML)
+                        var telefone = descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML
                         break
                 }
             }
         }
     }
+
+    if (nomeEmpresa) {
+        chrome.runtime.sendMessage({
+            action: "sentFromContentToBackGround",
+            nomeEmpresa: nomeEmpresa,
+            nomeFantasia: nomeFantasia,
+            logradouro: logradouro,
+            numero: numero,
+            cep: cep,
+            bairro: bairro,
+            municipio: municipio,
+            uf: uf,
+            telefone: telefone,
+            cnpj: cnpj
+        })
+    }
+
 }, 5000)

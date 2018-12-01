@@ -5,9 +5,10 @@
     "description": "Gera query para cadastramento de empresa",
     "permissions": [
         "activeTab",
-        "notifications",
+        "tabs",
         "http://*/*",
-        "tabs"
+        "tabs",
+        "background"
     ],
 
     "content_scripts": [
@@ -16,6 +17,11 @@
         "js": ["js/content.js"],
         "run_at": "document_end"
     }],
+
+    "background": {
+        "scripts": ["js/background.js"],
+        "persistent": false
+      },
 
     "browser_action": {
     "default_title": "Whereami?",
