@@ -34,12 +34,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (resposta) {
             if (document.getElementById('cb-tipo').value == 'pre-contrato') {
-                document.getElementById('resultado-query').value = ` 
-'${document.getElementById('nome-empresa').value}',
+                document.getElementById('resultado-query').value = 
+`'${document.getElementById('nome-empresa').value}',
 '${document.getElementById('nome-fantasia').value}',
 '${document.getElementById('cnpj').value}',
-'Nome_Usuario',
-'Login_email',
+'${document.getElementById('nome-usuario').value}',
+'${document.getElementById('email-usuario').value}',
 '${document.getElementById('logradouro').value}',
 '${document.getElementById('numero').value}',
 '${document.getElementById('bairro').value}',
@@ -50,12 +50,12 @@ NULL,
 '${document.getElementById('cidade').value}'`
 
             } else if (document.getElementById('cb-tipo').value == 'transportadora') {
-                document.getElementById('resultado-query').value = ` 
-'${document.getElementById('nome-empresa').value}',
+                document.getElementById('resultado-query').value = 
+`'${document.getElementById('nome-empresa').value}',
 '${document.getElementById('nome-fantasia').value}',
 '${document.getElementById('cnpj').value}',
-'Nome_Usuario',
-'Login_email',
+'${document.getElementById('nome-usuario').value}',
+'${document.getElementById('email-usuario').value}',
 '${document.getElementById('logradouro').value}',
 '${document.getElementById('numero').value}',
 '${document.getElementById('bairro').value}',
