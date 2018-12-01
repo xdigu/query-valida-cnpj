@@ -15,7 +15,7 @@ window.setInterval(function () {
     titulo = document.getElementById('data-result').querySelectorAll('table > thead')
     descricao = document.getElementById('data-result').querySelectorAll('table > tbody')
 
-    if(document.getElementsByTagName('h5')[0].innerText){
+    if(document.getElementsByTagName('h5')[0]){
         cnpj = document.getElementsByTagName('h5')[0].innerText.substr(5,18)
     }
 

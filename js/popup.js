@@ -32,38 +32,40 @@ document.addEventListener('DOMContentLoaded', function () {
     var btn2 = document.getElementById('gera-query')
     btn2.addEventListener('click', function () {
 
-        if (document.getElementById('cb-tipo').value == 'pre-contrato') {
-            document.getElementById('resultado-query').value = ` 
-            '${document.getElementById('nome-empresa').value}',
-            '${document.getElementById('nome-fantasia').value}',
-            '${document.getElementById('cnpj').value}',
-            'Nome_Usuario',
-            'Login_email',
-            '${document.getElementById('logradouro').value}',
-            '${document.getElementById('numero').value}',
-            '${document.getElementById('bairro').value}',
-            '${document.getElementById('cep').value}',
-            '${document.getElementById('telefone').value}',
-            NULL,
-            '${document.getElementById('uf').value}',
-            '${document.getElementById('cidade').value}'`
+        if (resposta) {
+            if (document.getElementById('cb-tipo').value == 'pre-contrato') {
+                document.getElementById('resultado-query').value = ` 
+'${document.getElementById('nome-empresa').value}',
+'${document.getElementById('nome-fantasia').value}',
+'${document.getElementById('cnpj').value}',
+'Nome_Usuario',
+'Login_email',
+'${document.getElementById('logradouro').value}',
+'${document.getElementById('numero').value}',
+'${document.getElementById('bairro').value}',
+'${document.getElementById('cep').value}',
+'${document.getElementById('telefone').value}',
+NULL,
+'${document.getElementById('uf').value}',
+'${document.getElementById('cidade').value}'`
 
-        } else if (document.getElementById('cb-tipo').value == 'transportadora') {
-            ` 
-            '${document.getElementById('nome-empresa').value}',
-            '${document.getElementById('nome-fantasia').value}',
-            '${document.getElementById('cnpj').value}',
-            'Nome_Usuario',
-            'Login_email',
-            '${document.getElementById('logradouro').value}',
-            '${document.getElementById('numero').value}',
-            '${document.getElementById('bairro').value}',
-            '${document.getElementById('cep').value}',
-            '${document.getElementById('telefone').value}',
-            NULL`
+            } else if (document.getElementById('cb-tipo').value == 'transportadora') {
+                document.getElementById('resultado-query').value = ` 
+'${document.getElementById('nome-empresa').value}',
+'${document.getElementById('nome-fantasia').value}',
+'${document.getElementById('cnpj').value}',
+'Nome_Usuario',
+'Login_email',
+'${document.getElementById('logradouro').value}',
+'${document.getElementById('numero').value}',
+'${document.getElementById('bairro').value}',
+'${document.getElementById('cep').value}',
+'${document.getElementById('telefone').value}',
+NULL`
 
-        } else if (document.getElementById('cb-tipo').value == 'planta') {
-            
+            } else if (document.getElementById('cb-tipo').value == 'planta') {
+
+            }   
         }
 
     })
