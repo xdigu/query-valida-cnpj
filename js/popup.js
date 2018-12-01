@@ -11,27 +11,39 @@ document.addEventListener('DOMContentLoaded', function () {
 
 chrome.extension.onMessage.addListener(function (request, sender, sendResponse) {
     if (request.action == 'sentFromBackGroundToPopUp') {
-        resposta = request
-            (function (resposta) {
-                document.getElementById('nome-empresa').value = resposta.nomeEmpresa
-                document.getElementById('nome-fantasia').value = resposta.nomeFantasia
-                document.getElementById('cnpj').value = resposta.cnpj
-                document.getElementById('logradouro').value = resposta.logradouro
-                document.getElementById('numero').value = resposta.numero
-                document.getElementById('bairro').value = resposta.bairro
-                document.getElementById('cidade').value = resposta.municipio
-                document.getElementById('uf').value = resposta.uf
-                document.getElementById('cep').value = resposta.cep
-                document.getElementById('telefone').value = resposta.telefone
-            })()
+        resposta = request;
+
+        document.getElementById('nome-empresa').value = resposta.nomeEmpresa
+        document.getElementById('nome-fantasia').value = resposta.nomeFantasia
+        document.getElementById('cnpj').value = resposta.cnpj
+        document.getElementById('logradouro').value = resposta.logradouro
+        document.getElementById('numero').value = resposta.numero
+        document.getElementById('bairro').value = resposta.bairro
+        document.getElementById('cidade').value = resposta.municipio
+        document.getElementById('uf').value = resposta.uf
+        document.getElementById('cep').value = resposta.cep
+        document.getElementById('telefone').value = resposta.telefone
+
     }
 })
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    var btn = document.getElementById('gera-query')
-    btn.addEventListener('click', function () {
-        document.getElementById('resultado-query').innerHTML = 'funcionou!'
-
+    var btn2 = document.getElementById('gera-query')
+    btn2.addEventListener('click', function () {
+        document.getElementById('resultado-query').value = `pre_contrato 
+        '${document.getElementById('nome-empresa').value}',
+        '${document.getElementById('nome-fantasia').value}',
+        '${document.getElementById('cnpj').value}',
+        'Nome_Usuario',
+        'Login_email',
+        '${document.getElementById('logradouro').value}',
+        '${document.getElementById('numero').value}',
+        '${document.getElementById('bairro').value}',
+        '${document.getElementById('cep').value}',
+        '${document.getElementById('telefone').value}',
+        NULL,
+        '${document.getElementById('uf').value}',
+        '${document.getElementById('cidade').value}'`
     })
 })
