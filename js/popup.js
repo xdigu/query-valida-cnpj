@@ -1,10 +1,9 @@
 var resposta
 
 document.addEventListener('DOMContentLoaded', function () {
-    var btn = document.getElementById('mybtn')
+    var btn = document.getElementById('carrega-informacao')
     btn.addEventListener('click', function () {
-        console.log('Apertou botao')
-        chrome.extension.sendMessage({ action: "sentFromPopUpToBackGround" });
+    chrome.extension.sendMessage({ action: "sentFromPopUpToBackGround" });
 
     })
 })
@@ -12,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 chrome.extension.onMessage.addListener(function (request, sender, sendResponse) {
     if (request.action == 'sentFromBackGroundToPopUp') {
-        console.log('recebi do background')
         resposta = request
         setValores(resposta)
     }

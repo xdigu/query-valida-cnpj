@@ -2,7 +2,6 @@ var response
 
 chrome.extension.onMessage.addListener(function (request, sender, sendResponse) {
     if (request.action == 'sentFromPopUpToBackGround') {
-        console.log('recebi do popup')
 
         if (response) {
             chrome.extension.sendMessage({
@@ -18,6 +17,7 @@ chrome.extension.onMessage.addListener(function (request, sender, sendResponse) 
                 telefone: response.telefone,
                 cnpj: response.cnpj
             })
+
         }
     }
 })
@@ -26,7 +26,5 @@ chrome.extension.onMessage.addListener(function (request, sender, sendResponse) 
 chrome.extension.onMessage.addListener(function (request, sender, sendResponse) {
     if (request.action == 'sentFromContentToBackGround') {
         response = request
-        console.log(response)
-
     }
 })
