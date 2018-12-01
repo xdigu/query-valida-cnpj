@@ -6,8 +6,6 @@
     "permissions": [
         "activeTab",
         "tabs",
-        "http://*/*",
-        "tabs",
         "background"
     ],
 
@@ -24,7 +22,7 @@
       },
 
     "browser_action": {
-    "default_title": "Whereami?",
+    "default_title": "cnpj",
     "default_popup": "popup.html"
   }
 }
