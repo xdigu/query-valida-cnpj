@@ -47,6 +47,15 @@ div.darkTable {
   height: 100%;
 }
 
+select.basic {
+  width: 115px;
+  height: 20px;
+}
+select.simple {
+  background: #8a8a8a;
+  border: 0;
+}
+
 /* DivTable.com */
 .divTable{ display: table; }
 .divTableRow { display: table-row; }
