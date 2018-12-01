@@ -15,6 +15,10 @@ window.setInterval(function () {
     titulo = document.getElementById('data-result').querySelectorAll('table > thead')
     descricao = document.getElementById('data-result').querySelectorAll('table > tbody')
 
+    if(document.getElementsByTagName('h5')[0].innerText){
+        cnpj = document.getElementsByTagName('h5')[0].innerText.substr(5,18)
+    }
+
     for (var percorre1 = 0; percorre1 < titulo.length; percorre1++) {
         for (var percorre2 = 0; percorre2 < titulo[percorre1].querySelectorAll('thead > tr > th').length; percorre2++) {
             if (titulo[percorre1].querySelectorAll('thead > tr > th')[percorre2].innerHTML) {
