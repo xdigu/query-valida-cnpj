@@ -16,7 +16,7 @@ window.setInterval(function () {
     descricao = document.getElementById('data-result').querySelectorAll('table > tbody')
 
     if(document.getElementsByTagName('h5')[0]){
-        cnpj = document.getElementsByTagName('h5')[0].innerText.substr(5,18)
+        cnpj = (document.getElementsByTagName('h5')[0].innerText.substr(5,18)).replace(/[\./-]/g, "")
     }
 
     for (var percorre1 = 0; percorre1 < titulo.length; percorre1++) {
