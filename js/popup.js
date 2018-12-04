@@ -65,7 +65,7 @@ NULL`
 
             } else if (document.getElementById('cb-tipo').value == 'planta') {
                 document.getElementById('resultado-query').value = 
-`'ID_EMPRESA',
+`@ID_EMPRESA,
 '${document.getElementById('cnpj').value}',
 '${document.getElementById('nome-fantasia').value}',
 NULL,
@@ -78,7 +78,7 @@ NULL,
 '${document.getElementById('nome-empresa').value}',
 NULL,
 '${document.getElementById('logradouro').value}, ${document.getElementById('numero').value}',
-'${document.getElementById('cidade').value}'
+'${document.getElementById('cidade').value}',
 '${document.getElementById('bairro').value}',
 '${document.getElementById('cep').value}',
 'BRASIL'`
