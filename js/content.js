@@ -36,7 +36,7 @@ window.setInterval(function () {
                         var numero = descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML
                         break
                     case 'CEP':
-                        var cep = descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML
+                        var cep = descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML.replace(/[\./-]/g, "")
                         break
                     case 'Bairro':
                         var bairro = descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML
