@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var btn = document.getElementById('carrega-informacao')
     btn.addEventListener('click', function () {
         chrome.extension.sendMessage({ action: "sentFromPopUpToBackGround" });
-
     })
 })
 
@@ -16,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
 chrome.extension.onMessage.addListener(function (request, sender, sendResponse) {
     if (request.action == 'sentFromBackGroundToPopUp') {
         resposta = request;
-
 
         // Adiciona as informações da empresa para o popup.html
         document.getElementById('nome-empresa').value = resposta.nomeEmpresa
@@ -29,10 +27,8 @@ chrome.extension.onMessage.addListener(function (request, sender, sendResponse) 
         document.getElementById('uf').value = resposta.uf
         document.getElementById('cep').value = resposta.cep
         document.getElementById('telefone').value = resposta.telefone
-
     }
 })
-
 
 
 // Botão que gera as query com base nas informações que estão no popup.html
@@ -60,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     '${document.getElementById('uf').value}',
                     '${document.getElementById('cidade').value}'
                     `.replace(/^ */gm, "")
-
             }
             // Verifica informações do bombobox para criar query de transportadora
             else if (document.getElementById('cb-tipo').value == 'transportadora') {
@@ -79,7 +74,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     NULL
                     `.replace(/^ */gm, "")
             }
-
             // Verifica informações do bombobox para criar query de planta
             else if (document.getElementById('cb-tipo').value == 'planta') {
                 document.getElementById('resultado-query').value =

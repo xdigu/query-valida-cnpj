@@ -6,7 +6,6 @@ var resposta
 chrome.extension.onMessage.addListener(function (request, sender, sendResponse) {
     if (request.action == 'sentFromPopUpToBackGround') {
 
-
         // Envia resposta para o popup.js com as informações da empresa
         if (resposta) {
             resposta.action = 'sentFromBackGroundToPopUp'
