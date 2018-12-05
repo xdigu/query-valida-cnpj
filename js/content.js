@@ -1,74 +1,63 @@
-var titulo = document.getElementById('data-result').querySelectorAll('table > thead')
-var descricao = document.getElementById('data-result').querySelectorAll('table > tbody')
-var nomeEmpresa
-var nomeFantasia
-var logradouro
-var numero
-var cep
-var bairro
-var municipio
-var uf
-var telefone
-var cnpj
+// Variaveis usadas para pegar informações da tabela
+var titulo
+var descricao
+
+// Cria objeto que será enviado como resposta
+var resposta = {}
+
 
 window.setInterval(function () {
+
+    // Pega informações da tabela da pagina
     titulo = document.getElementById('data-result').querySelectorAll('table > thead')
     descricao = document.getElementById('data-result').querySelectorAll('table > tbody')
 
-    if(document.getElementsByTagName('h5')[0]){
-        cnpj = (document.getElementsByTagName('h5')[0].innerText.substr(5,18)).replace(/[\./-]/g, "")
-    }
 
+    // Percorre a tabela verificando se possui as informações no titulo
     for (var percorre1 = 0; percorre1 < titulo.length; percorre1++) {
         for (var percorre2 = 0; percorre2 < titulo[percorre1].querySelectorAll('thead > tr > th').length; percorre2++) {
             if (titulo[percorre1].querySelectorAll('thead > tr > th')[percorre2].innerHTML) {
+                
+
+                // Adiciona as informações da descrição da empresa para a resposta
                 switch (titulo[percorre1].querySelectorAll('thead > tr > th')[percorre2].innerHTML) {
                     case 'Nome Empresarial':
-                        var nomeEmpresa = descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML
-                        break
+                    resposta.nomeEmpresa = descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML
+                    resposta.cnpj = document.getElementsByTagName('h5')[0].innerText.substr(5,18).replace(/[\./-]/g, "")
+                    break
                     case 'Nome Fantasia':
-                        var nomeFantasia = descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML
-                        break
+                    resposta.nomeFantasia = descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML
+                    break
                     case 'Logradouro':
-                        var logradouro = descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML
-                        break
+                    resposta.logradouro = descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML
+                    break
                     case 'Número':
-                        var numero = descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML
-                        break
+                    resposta.numero = descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML
+                    break
                     case 'CEP':
-                        var cep = descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML.replace(/[\./-]/g, "")
-                        break
+                    resposta.cep = descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML.replace(/[\./-]/g, "")
+                    break
                     case 'Bairro':
-                        var bairro = descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML
-                        break
+                    resposta.bairro = descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML
+                    break
                     case 'Município':
-                        var municipio = descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML
-                        break
+                    resposta.municipio = descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML
+                    break
                     case 'UF':
-                        var uf = descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML
-                        break
+                    resposta.uf = descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML
+                    break
                     case 'Telefone':
-                        var telefone = descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML
-                        break
+                    resposta.telefone = descricao[percorre1].querySelectorAll('tbody > tr > td')[percorre2].innerHTML
+                    break
                 }
             }
         }
     }
 
-    if (nomeEmpresa) {
-        chrome.runtime.sendMessage({
-            action: "sentFromContentToBackGround",
-            nomeEmpresa: nomeEmpresa,
-            nomeFantasia: nomeFantasia,
-            logradouro: logradouro,
-            numero: numero,
-            cep: cep,
-            bairro: bairro,
-            municipio: municipio,
-            uf: uf,
-            telefone: telefone,
-            cnpj: cnpj
-        })
+    // Envia resposta para o background
+    if (resposta) {
+        resposta.action = 'sentFromContentToBackGround'
+        chrome.runtime.sendMessage(resposta)
     }
 
 }, 5000)

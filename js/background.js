@@ -1,30 +1,24 @@
-var response
+// Cria variável para receber o objeto de resposta do content.js
+var resposta
 
+
+// Escuta resposta enviada do popup.js
 chrome.extension.onMessage.addListener(function (request, sender, sendResponse) {
     if (request.action == 'sentFromPopUpToBackGround') {
 
-        if (response) {
-            chrome.extension.sendMessage({
-                action: "sentFromBackGroundToPopUp",
-                nomeEmpresa: response.nomeEmpresa,
-                nomeFantasia: response.nomeFantasia,
-                logradouro: response.logradouro,
-                numero: response.numero,
-                cep: response.cep,
-                bairro: response.bairro,
-                municipio: response.municipio,
-                uf: response.uf,
-                telefone: response.telefone,
-                cnpj: response.cnpj
-            })
 
+        // Envia resposta para o popup.js com as informações da empresa
+        if (resposta) {
+            resposta.action = 'sentFromBackGroundToPopUp'
+            chrome.extension.sendMessage(resposta)
         }
     }
 })
 
 
+// Escuta resposta enviada do content.js
 chrome.extension.onMessage.addListener(function (request, sender, sendResponse) {
     if (request.action == 'sentFromContentToBackGround') {
-        response = request
+        resposta = request
     }
 })
