@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (resposta) {
 
-            // Verifica informações do bombobox para criar query de pré-contrato
+            // Verifica informações do combobox para criar query de pré-contrato
             if (document.getElementById('cb-tipo').value == 'pre-contrato') {
 
                 document.getElementById('resultado-query').value =
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     '${document.getElementById('cidade').value}'
                     `.replace(/^ */gm, "")
             }
-            // Verifica informações do bombobox para criar query de transportadora
+            // Verifica informações do combobox para criar query de transportadora
             else if (document.getElementById('cb-tipo').value == 'transportadora') {
 
                 document.getElementById('resultado-query').value =
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     NULL
                     `.replace(/^ */gm, "")
             }
-            // Verifica informações do bombobox para criar query de planta
+            // Verifica informações do combobox para criar query de planta
             else if (document.getElementById('cb-tipo').value == 'planta') {
                 document.getElementById('resultado-query').value =
                     `@ID_EMPRESA,
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     NULL,
                     NULL,
                     '${document.getElementById('uf').value}',
-                    'S', 
+                    'A', 
                     NULL, 
                     NULL, 
                     NULL,
