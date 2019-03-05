@@ -2,99 +2,86 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="/css/style.css" />
-    <script src="/js/popup.js"></script>
+    <meta charset="UTF-8">
+    <title>Query Valida CNPJ</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="js/popup.js"></script>
 </head>
 
-<body style="height:300px; width:320px;">
-    <div class="divTable darkTable">
-        <div class="divTableBody">
-            <div class="divTableRow">
-                <div class="divTableCell">nome empresa</div>
-                <div class="divTableCell">
-                    <input type="text" value="" id="nome-empresa">
-                </div>
-            </div>
-            <div class="divTableRow">
-                <div class="divTableCell">nome fantasia</div>
-                <div class="divTableCell">
-                    <input type="text" value="" id="nome-fantasia">
-                </div>
-            </div>
-            <div class="divTableRow">
-                <div class="divTableCell">cnpj</div>
-                <div class="divTableCell">
-                    <input type="text" value="" id="cnpj">
-                </div>
-            </div>
-            <div class="divTableRow">
-                <div class="divTableCell">nome usuario</div>
-                <div class="divTableCell">
-                    <input type="text" value="" id="nome-usuario">
-                </div>
-            </div>
-            <div class="divTableRow">
-                <div class="divTableCell">email usuario</div>
-                <div class="divTableCell">
-                    <input type="text" value="" id="email-usuario">
-                </div>
-            </div>
-            <div class="divTableRow">
-                <div class="divTableCell">logradouro</div>
-                <div class="divTableCell">
-                    <input type="text" value="" id="logradouro">
-                </div>
-            </div>
-            <div class="divTableRow">
-                <div class="divTableCell">numero</div>
-                <div class="divTableCell">
-                    <input type="text" value="" id="numero">
-                </div>
-            </div>
-            <div class="divTableRow">
-                <div class="divTableCell">bairro</div>
-                <div class="divTableCell">
-                    <input type="text" value="" id="bairro">
-                </div>
-            </div>
-            <div class="divTableRow">
-                <div class="divTableCell">cidade</div>
-                <div class="divTableCell">
-                    <input type="text" value="" id="cidade">
-                </div>
-            </div>
-            <div class="divTableRow">
-                <div class="divTableCell">uf</div>
-                <div class="divTableCell">
-                    <input type="text" value="" id="uf">
-                </div>
-            </div>
-            <div class="divTableRow">
-                <div class="divTableCell">cep</div>
-                <div class="divTableCell">
-                    <input type="text" value="" id="cep">
-                </div>
-            </div>
-            <div class="divTableRow">
-                <div class="divTableCell">telefone</div>
-                <div class="divTableCell">
-                    <input type="text" value="" id="telefone">
-                </div>
+<body style="height:300px; width:320px; margin-top: 20px">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                    <form>
+                        <div class="form-group">
+                            <!-- <label for="NomeEmpresa">Razão Social</label> -->
+                            <input type="text" class="form-control form-control-sm" id="nome-empresa" value="" placeholder="Razão Social">
+                        </div>
+                        <div class="form-group">
+                            <!-- <label for="NomeFantasia">Fantasia</label> -->
+                            <input type="text" class="form-control form-control-sm" id="nome-fantasia" value="" placeholder="Nome Fantasia">
+                        </div>
+                        <div class="form-group">
+                            <!-- <label for="CNPJ">CNPJ</label> -->
+                            <input type="text" class="form-control form-control-sm" id="cnpj" value="" placeholder="CNPJ">
+                        </div>
+                        <div class="form-group">
+                            <!-- <label for="NomeUsuario">Nome Usuário</label> -->
+                            <input type="text" class="form-control form-control-sm" id="nome-usuario" value="" placeholder="Nome do Usuário">
+                        </div>
+                        <div class="form-group">
+                            <!-- <label for="E-mail">E-mail</label> -->
+                            <input type="text" class="form-control form-control-sm" id="email-usuario" value="" placeholder="fulano@example.com">
+                        </div>
+                        <div class="form-group">
+                            <!-- <label for="Logradouro">Logradouro</label> -->
+                            <input type="text" class="form-control form-control-sm" id="logradouro" value="" placeholder="Endereço">
+                        </div>
+                        <div class="form-group">
+                            <!-- <label for="Número">Ṇúmero</label> -->
+                            <input type="text" class="form-control form-control-sm" id="numero" value="" placeholder="Número">
+                        </div>
+                        <div class="form-group">
+                            <!-- <label for="Bairro">Bairro</label> -->
+                            <input type="text" class="form-control form-control-sm" id="bairro" value="" placeholder="Bairro">
+                        </div>
+                        <div class="form-group">
+                            <!-- <label for="Cidade">Cidade</label> -->
+                            <input type="text" class="form-control form-control-sm" id="cidade" value="" placeholder="Cidade">
+                        </div>
+                        <div class="form-group">
+                            <!-- <label for="UF">Estado</label> -->
+                            <input type="text" class="form-control form-control-sm" id="uf" value="" placeholder="Estado">
+                        </div>
+                        <div class="form-group">
+                            <!-- <label for="CEP">CEP</label> -->
+                            <input type="text" class="form-control form-control-sm" id="cep" value="" placeholder="CEP">
+                        </div>
+                        <div class="form-group">
+                            <!-- <label for="telefone">Telefone</label> -->
+                            <input type="text" class="form-control form-control-sm" id="telefone" value="" placeholder="Telefone">
+                        </div>
+                        <div class="form-group">
+                            <select id="cb-tipo" class="form-control form-control-sm">
+                                <option value="" >Selecione...</option>
+                                <option value="pre-contrato" >pre-contrato</option>
+                                <option value="transportadora" >transportadora</option>
+                                <option value="planta" >planta</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" id="carrega-informacao" class="btn btn-primary">Preencher</button>
+                            <button type="submit" id="gera-query" class="btn btn-success">Gerar query</button>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea type="text" class="form-control" id="resultado-query"></textarea>
+                        </div>
+                    </form>
             </div>
         </div>
-    </div>
-    <div>
-        <button id="carrega-informacao">Carrega valores</button>
-        <button id="gera-query">Gerar query</button>
-        <select id="cb-tipo" class="basic">
-            <option value="" ></option>
-            <option value="pre-contrato" >pre-contrato</option>
-            <option value="transportadora" >transportadora</option>
-            <option value="planta" >planta</option>
-        </select>
-    </div>
-    <div class="box">
-            <textarea type="text" class="input" id="resultado-query"></textarea>
+        
     </div>
 </body>
 
