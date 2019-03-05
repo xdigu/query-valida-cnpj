@@ -5,8 +5,12 @@ var resposta
 // Botão que envia o resquest para o background.js
 document.addEventListener('DOMContentLoaded', function () {
     var btn = document.getElementById('carrega-informacao')
-    btn.addEventListener('click', function () {
-        chrome.extension.sendMessage({ action: "sentFromPopUpToBackGround" });
+    btn.addEventListener('click', function (event) {
+        event.preventDefault()
+        
+        chrome.extension.sendMessage({
+            action: "sentFromPopUpToBackGround"
+        });
     })
 })
 
@@ -34,7 +38,8 @@ chrome.extension.onMessage.addListener(function (request, sender, sendResponse) 
 // Botão que gera as query com base nas informações que estão no popup.html
 document.addEventListener('DOMContentLoaded', function () {
     var btn2 = document.getElementById('gera-query')
-    btn2.addEventListener('click', function () {
+    btn2.addEventListener('click', function (event) {
+        event.preventDefault()
 
         if (resposta) {
 
