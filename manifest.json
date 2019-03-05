@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "CNPJ Query Generator",
-    "version": "1.0",
+    "version": "1.1",
     "description": "Gera query para cadastramento de empresa",
     "permissions": [
         "activeTab",
